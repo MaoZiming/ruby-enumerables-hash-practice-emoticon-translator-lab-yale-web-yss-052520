@@ -1,8 +1,8 @@
 # require modules here
 
-def load_library
+def load_library(address = 'emoticons.yml')
   # code goes here
-  h = YAML.load_file('emoticons.yml')
+  h = YAML.load_file(address)
   output = {}
   h.each({}) do |memo, (key, value)|
     p = {
@@ -16,10 +16,28 @@ def load_library
 
 end
 
-def get_japanese_emoticon
+def get_english_meaning(address, emoji)
   # code goes here
+  h = load_library(address)
+
+  h.each({}) do |memo, (key, value)|
+    if value[1] == emoji
+
+      return key.to_s
+    end
+  end
+
 end
 
-def get_english_meaning
+
+def get_japanese_emoticon (address, emoji)
   # code goes here
+  h = load_library(address)
+
+  h.each({}) do |memo, (key, value)|
+    if value[0] == emoji
+
+      return value[1]
+    end
+  end
 end
