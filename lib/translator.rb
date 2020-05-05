@@ -2,7 +2,7 @@
 
 def load_library(address)
   # code goes here
-  h = YAML.load_file(address)
+  h = YML.load_file(address)
   output = {}
   h.each({}) do |memo, (key, value)|
     p = {
