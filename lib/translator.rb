@@ -4,7 +4,7 @@ def load_library(address)
   # code goes here
   h = YAML.load_file(address)
   output = {}
-  h.each({}) do |memo, (key, value)|
+  h.reduce({}) do |memo, (key, value)|
     p = {
       :english => value[0],
       :japanese => value[1]
