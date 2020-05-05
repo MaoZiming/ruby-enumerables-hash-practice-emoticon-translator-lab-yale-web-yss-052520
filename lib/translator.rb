@@ -21,7 +21,7 @@ def get_english_meaning(address, emoji)
   h = load_library(address)
 
   h.reduce({}) do |memo, (key, value)|
-    if value[1] == emoji
+    if value[:english] == emoji
 
       return key.to_s
     end
@@ -35,9 +35,9 @@ def get_japanese_emoticon (address, emoji)
   h = load_library(address)
 
   h.reduce({}) do |memo, (key, value)|
-    if value[0] == emoji
+    if value[:english] == emoji
 
-      return value[1]
+      return value[:japanese]
     end
   end
 end
