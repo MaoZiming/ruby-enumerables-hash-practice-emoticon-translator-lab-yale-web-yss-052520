@@ -21,7 +21,7 @@ def get_english_meaning(address, emoji)
   h = load_library(address)
 
   h.reduce({}) do |memo, (key, value)|
-    if value[:english] == emoji
+    if value[:japanese] == emoji
 
       return key.to_s
     end
