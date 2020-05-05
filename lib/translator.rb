@@ -20,7 +20,7 @@ def get_english_meaning(address, emoji)
   # code goes here
   h = load_library(address)
 
-  h.each({}) do |memo, (key, value)|
+  h.reduce({}) do |memo, (key, value)|
     if value[1] == emoji
 
       return key.to_s
@@ -34,7 +34,7 @@ def get_japanese_emoticon (address, emoji)
   # code goes here
   h = load_library(address)
 
-  h.each({}) do |memo, (key, value)|
+  h.reduce({}) do |memo, (key, value)|
     if value[0] == emoji
 
       return value[1]
