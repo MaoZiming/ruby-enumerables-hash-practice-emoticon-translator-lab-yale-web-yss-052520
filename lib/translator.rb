@@ -8,7 +8,7 @@ def load_library(address = 'emoticons.yml')
     p = {
       :english => value[0],
       :japanese => value[1],
-      output[key] = p
+      output[key] => p
     }
     memo
   end
