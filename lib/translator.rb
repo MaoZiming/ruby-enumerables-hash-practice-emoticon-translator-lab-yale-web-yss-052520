@@ -7,7 +7,7 @@ def load_library
   h.each({}) do |memo, (key, value)|
     p = {
       :english => value[0],
-      :japanese => value[1]
+      :japanese => value[1],
       output[key] = p
     }
     memo
