@@ -1,8 +1,8 @@
 # require modules here
-
+require "yaml"
 def load_library(address)
   # code goes here
-  h = YML.load_file(address)
+  h = YAML.load_file(address)
   output = {}
   h.each({}) do |memo, (key, value)|
     p = {
